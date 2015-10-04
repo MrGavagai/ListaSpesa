@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Shopping List</string>
+
+    <string name="title_activity_lista">Shopping List</string>
+    <string name="menu_products">Products</string>
+    <string name="menu_torna">Back</string>
+    <string name="menu_nuovo">New</string>
+    <string name="menu_modifica">Edit</string>
+    <string name="menu_elimina">Delete</string>
+    <string name="title_activity_products">Products</string>
+    <string name="title_activity_prodotti">Products</string>
+    <string name="tab_lista">List</string>
+    <string name="tab_prodotti">Products</string>
+    <string name="add_new">Insert new</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+
+
+</resources>
