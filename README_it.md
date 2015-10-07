@@ -7,4 +7,4 @@ I dati sono permanenti e salvati su un database. Se volete cancellare un prodott
 A casa: andate su Prodotti, cliccate sulla stellina per accenderla e aggiungere il prodotto alla lista.
 Al supermercato: andate su Lista e cliccate sulla X quando avete messo il prodotto nel carrello.
 
-Sorgente a: https://githab.com/MrGavagai/ListaSpesa
+Sorgente a: https://github.com/MrGavagai/ListaSpesa
