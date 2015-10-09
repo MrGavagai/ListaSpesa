@@ -67,8 +67,6 @@ public class ListaActivity extends AppCompatActivity implements ActionBar.TabLis
         psv =(ListView) findViewById(R.id.plist);
         db = new dbHandler(this);
 
-
-        //lsv.setOnTouchListener(gestureListener);
         updateLView();
 
     }

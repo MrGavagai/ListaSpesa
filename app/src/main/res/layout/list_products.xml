@@ -18,7 +18,8 @@
             android:layout_gravity="left"
             android:layout_marginRight="20dp"
             android:contentDescription="@android:string/ok"
-            android:src="@android:drawable/btn_star_big_off" />
+            android:src="@android:drawable/btn_star_big_off"
+            android:layout_marginLeft="5dp" />
 
         <TextView
             android:id="@+id/name"
