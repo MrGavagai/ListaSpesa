@@ -117,7 +117,7 @@ public class ListaActivity extends AppCompatActivity implements ActionBar.TabLis
 
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
                         if(bt !=null){
-                            if(count==0)
+                            if(s.length()==0)
                                 bt.setEnabled(false);
                             else
                                 bt.setEnabled(true);
@@ -308,10 +308,16 @@ public class ListaActivity extends AppCompatActivity implements ActionBar.TabLis
                         final String s = ((TextView)v).getText().toString();
                         AlertDialog.Builder alert = new AlertDialog.Builder(ListaActivity.this);
                         alert.setTitle(R.string.title_activity_prodotti);
-                        alert.setMessage(getString(R.string.delete) + " " + s + "?");
-                        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        alert.setMessage(R.string.modify);
+                        final EditText input = new EditText(ListaActivity.this);
+                        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+                        input.setText(s);
+                        alert.setView(input);
+
+                        alert.setPositiveButton(R.string.modify_bt, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                db.deleteProduct(id);
+                                final String st = input.getText().toString();
+                                db.updateProduct(id,st);
                                 updatePView();
                             }
                         });
@@ -321,7 +327,62 @@ public class ListaActivity extends AppCompatActivity implements ActionBar.TabLis
                                 // Canceled.
                             }
                         });
-                        alert.show();
+
+                        alert.setNeutralButton(R.string.menu_elimina, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+
+                                AlertDialog.Builder dalert = new AlertDialog.Builder(ListaActivity.this);
+                                dalert.setTitle(R.string.title_activity_prodotti);
+                                dalert.setMessage(getString(R.string.delete) + " " + s + "?");
+                                dalert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        db.deleteProduct(id);
+                                        updatePView();
+                                    }
+                                });
+
+                                dalert.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                        // Canceled.
+                                    }
+                                });
+                                dalert.show();
+
+
+
+                                // Canceled.
+                            }
+                        });
+
+                        input.addTextChangedListener(new TextWatcher() {
+
+
+                            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                                if(bt !=null){
+                                    if(s.length()==0)
+                                        bt.setEnabled(false);
+                                    //((AlertDialog) alert).getButton(AlertDialog.BUTTON_POSITIVE).setEnabled(false);
+                                    else
+                                        bt.setEnabled(true);
+                                }
+                            }
+
+                            public void afterTextChanged(Editable s) {
+                                // TODO Auto-generated method stub
+                            }
+
+                            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                                // TODO Auto-generated method stub
+                            }
+
+
+                        });
+
+                        //alert.show();
+                        ad = alert.create();
+                        ad.show();
+                        bt = ad.getButton(DialogInterface.BUTTON_POSITIVE);
+                        bt.setEnabled(true);
 
                         return false;
                     }

@@ -3,7 +3,7 @@
     <string name="app_name">Lista Spesa</string>
     <string name="add_new">Inserisci nuovo</string>
     <string name="cancel">Annulla</string>
-    <string name="delete">Cancellare</string>
+    <string name="delete">Eliminare</string>
     <string name="menu_elimina">Elimina</string>
     <string name="menu_modifica">Modifica</string>
     <string name="menu_nuovo">Nuovo</string>
@@ -15,4 +15,6 @@
     <string name="title_activity_lista">Lista Spesa</string>
     <string name="title_activity_prodotti">Prodotti</string>
     <string name="title_activity_products">Prodotti</string>
+    <string name="modify">Modifica o Elimina</string>
+    <string name="modify_bt">Modifica</string>
 </resources>
