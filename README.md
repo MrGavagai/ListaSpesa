@@ -4,5 +4,7 @@ Go to Products tab and click on + to add new products as they will serve. In a s
 At home: go to Products, click on the star to turn it on and add the product to the list. 
 At the supermarket: go to List and click on the X when you put the product in the basket.
 
+Version 1.1 Now it's possible modify the product name.
+
 Source at: https://github.com/MrGavagai/ListaSpesa
 It uses Sqlite databasa and Tabs without Fragments.
